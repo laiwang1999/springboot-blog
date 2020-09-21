@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Document</title>
+    <title>期待你的留言</title>
     <link rel="stylesheet" type="text/css" th:href="@{/res/layui/css/layui.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/res/css/main.css}">
     <!--加载meta IE兼容文件-->
@@ -26,7 +26,6 @@
                         <img class="banner-img" th:src="@{/res/img/liuyan.jpg}">
                         <div class="form">
                             <form class="layui-form" th:action="@{/message/add}" method="post">
-                                <input type="hidden" th:value="${messages.size()+1}" name="id">
                                 <div class="layui-form-item layui-form-text">
                                     <div class="layui-input-block">
                                         <textarea name="content" placeholder="既然来了，就说几句" class="layui-textarea"></textarea>
@@ -45,7 +44,7 @@
                         </div>
                     </div>
                     <div class="volume">
-                        全部留言 <span>10</span>
+                        全部留言 <span th:text="${messages.size()}"></span>
                     </div>
                     <div class="list-cont">
                         <div class="cont" th:each="item:${messages}">

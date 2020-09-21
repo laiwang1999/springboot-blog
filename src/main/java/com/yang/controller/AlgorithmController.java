@@ -19,10 +19,10 @@ public class AlgorithmController {
         List<Algorithm> algorithms = algorithmService.selectAllAlgorithm();
         model.addAttribute("algorithms", algorithms);
         //标题active作用
-        model.addAttribute("algorithm",true);
+        model.addAttribute("algorithmPage",true);
         //面包屑active作用
-        model.addAttribute("article",true);
-        return "algorithm/algorithmList";
+        model.addAttribute("articlePage",true);
+        return "article/algorithm/algorithmList";
     }
 
 }

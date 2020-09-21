@@ -17,11 +17,11 @@ public class MessageController {
     @Autowired
     MessageServiceImpl messageService;
 
-    @GetMapping("/message/show")
+    @GetMapping("/message")
     public String showMessage(Model model){
         List<Message> messages = messageService.selectMessage();
         model.addAttribute("messages",messages);
-        model.addAttribute("message",true);
+        model.addAttribute("messagePage",true);
         return "message/leacots";
     }
     @PostMapping("/message/add")
@@ -31,6 +31,6 @@ public class MessageController {
         Message message = new Message(UUIDUtils.getUUID(),name,content);
         messageService.addMessage(message);
         model.addAttribute("message",true);
-        return "redirect:/message/show";
+        return "redirect:/message";
     }
 }

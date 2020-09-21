@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:mysql://116.62.121.124:3306/blog?serverTimezone=Asia/Shanghai
+    username: yj
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    data-password: 833E4ABBC56C89041A9070F043641E3B
+  thymeleaf:
+    cache: false
+  mvc:
+    format:
+      date: yyyy/MM/dd
+mybatis:
+  type-aliases-package: com.yang.pojo
+  mapper-locations: classpath:mapper/*.xml
+debug: true

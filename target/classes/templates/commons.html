@@ -21,32 +21,30 @@
         <div class="menu"></div>
     </div>
     <h1 class="logo">
-        <a href="algorithm/algorithmList.html">
+        <a href="article/algorithm/algorithmList.html">
             <span>MYBLOG</span>
             <img th:src="@{/res/img/logo.png}">
         </a>
     </h1>
     <div class="nav">
-        <a th:href="@{/index}" th:class="${article == true ? 'active':'' }">文章</a>
-        <a href="whisper.html">微语</a>
-        <a th:href="@{/message/show}" th:class="${message == true ? 'active':''}">留言</a>
-        <a href="album.html">相册</a>
-        <a href="about.html">关于</a>
+        <a th:href="@{/index}" th:class="${articlePage == true ? 'active':'' }">文章</a>
+        <a th:href="@{/message}" th:class="${messagePage == true ? 'active':''}">留言</a>
+        <a th:href="@{/album}" th:class="${albumPage == true ? 'active':''}">相册</a>
+        <a th:href="@{/about}" th:class="${aboutPage == true ? 'active':''}">关于</a>
     </div>
     <ul class="layui-nav header-down-nav">
         <li class="layui-nav-item"><a th:href="@{/index}" class="active">文章</a></li>
-        <li class="layui-nav-item"><a href="whisper.html">微语</a></li>
-        <li class="layui-nav-item"><a th:href="@{/message/show}">留言</a></li>
-        <li class="layui-nav-item"><a href="album.html">相册</a></li>
-        <li class="layui-nav-item"><a href="about.html">关于</a></li>
+        <li class="layui-nav-item"><a th:href="@{/message}">留言</a></li>
+        <li class="layui-nav-item"><a th:href="@{/album}">相册</a></li>
+        <li class="layui-nav-item"><a th:href="@{/about}">关于</a></li>
     </ul>
     <p class="welcome-text">
         欢迎来到<span class="name">还挺好</span>的博客~
     </p>
 </div>
 <span class="layui-breadcrumb" lay-separator="|" th:fragment="bread">
-            <a th:href="@{/}" th:class="${algorithm == true ? 'active' : ''}">算法设计</a>
-            <a th:href="@{/javaList}" th:class="${java == true ? 'active' : ''}">Java开发</a>
+            <a th:href="@{/index}" th:class="${algorithmPage == true ? 'active' : ''}">算法设计</a>
+            <a th:href="@{/javaList}" th:class="${javaPage == true ? 'active' : ''}">Java开发</a>
             <a href="javascript:" class="">前端开发</a>
             <a href="javascript:" class="">生活</a>
         </span>

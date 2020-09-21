@@ -18,10 +18,10 @@ public class JavaDevelopmentController {
         List<Java> javaList = service.selectAllJavaDevelopment();
         model.addAttribute("javaList",javaList);
         //面包屑active作用
-        model.addAttribute("java",true);
+        model.addAttribute("javaPage",true);
         //标题active作用
-        model.addAttribute("article",true);
-        return "JavaDevelopment/javaDevelopmentList";
+        model.addAttribute("articlePage",true);
+        return "article/JavaDevelopment/javaDevelopmentList";
     }
 
 }

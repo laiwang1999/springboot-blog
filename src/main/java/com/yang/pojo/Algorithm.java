@@ -1,6 +1,5 @@
 package com.yang.pojo;
 
-import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
