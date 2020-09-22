@@ -10,8 +10,6 @@ import org.springframework.lang.Nullable;
 import java.util.Date;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Message {
     private String uuid;
     private String name;
@@ -23,4 +21,6 @@ public class Message {
         this.content=content;
     }
 
+    public Message() {
+    }
 }

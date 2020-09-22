@@ -10,7 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Algorithm {
-    public int id;
+    public int uuid;
     public String title;
     public String content;
     public String type;

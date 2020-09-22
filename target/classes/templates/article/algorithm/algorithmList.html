@@ -34,7 +34,7 @@
 <div class="content">
     <div class="cont w1000">
         <div class="title">
-        <div th:replace="~{commons::bread}"></div>
+            <div th:replace="~{commons::bread}"></div>
         </div>
         <div class="list-item">
             <div class="item" th:each="item:${algorithms}">
@@ -49,7 +49,8 @@
                                     <button class="layui-btn layui-btn-danger new-icon">new</button>
                                 </h3>
                                 <h5>
-                                    <span style="color: #FFB800" th:text="${#dates.format(item.getCreateTime(),'yyyy-MM-dd HH:mm')}"></span>
+                                    <span style="color: #FFB800"
+                                          th:text="${#dates.format(item.getCreateTime(),'yyyy-MM-dd HH:mm')}"></span>
                                 </h5>
                                 <h5 th:text="${item.getType()}"></h5>
                                 <p th:text="${item.getContent()}"></p>
@@ -61,8 +62,8 @@
                 </div>
             </div>
         </div>
-<!--        分页-->
-<!--        <div id="demo" style="text-align: center;"></div>-->
+        <!--        分页-->
+        <!--        <div id="demo" style="text-align: center;"></div>-->
     </div>
 </div>
 
@@ -70,6 +71,7 @@
 <script type="text/javascript" th:src="@{/res/layui/layui.js}"></script>
 <script type="text/javascript" th:inline="javascript">
     layui.config({
+        skin:'demo-class',
         base: '../res/js/util/'
     }).use(['element', 'laypage', 'jquery', 'menu'], function () {
         element = layui.element, laypage = layui.laypage,
@@ -80,6 +82,7 @@
         });
         menu.init();
     })
+
 </script>
 </body>
 </html>

@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Shanghai
     username: root
     password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
   thymeleaf:
     cache: false
   mvc:
@@ -14,7 +14,9 @@ spring:
       date: yyyy/MM/dd
   profiles:
     active: dev
-mybatis:
+
+  messages:
+    basename: i18n.login
   type-aliases-package: com.yang.pojo
   mapper-locations: classpath:mapper/*.xml
 debug: true

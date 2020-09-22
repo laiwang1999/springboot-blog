@@ -7,10 +7,12 @@ C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\service\me
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\mapper\MessageMapper.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\utils\UUIDUtils.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\SpringbootBlogApplication.java
+C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\controller\User.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\controller\AlgorithmController.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\mapper\AlgorithmMapper.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\service\message\MessageService.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\utils\Constants.java
+C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\controller\LoginController.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\controller\AboutController.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\service\javaDevelopment\JavaDevelopmentService.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\config\SecurityConfig.java
@@ -19,6 +21,7 @@ C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\mapper\Jav
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\controller\JavaDevelopmentController.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\pojo\Java.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\pojo\User.java
+C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\config\WebConfig.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\controller\AlbumController.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\pojo\Life.java
 C:\Users\Administrator\Desktop\springboot-blog\src\main\java\com\yang\service\javaDevelopment\JavaDevelopmentServiceImpl.java

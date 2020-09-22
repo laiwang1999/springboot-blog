@@ -12,18 +12,35 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/**").permitAll();
+        http.authorizeRequests().antMatchers("/").permitAll()
+                .antMatchers("/message/add").hasRole("vip")
+                .antMatchers("/algorithm").hasRole("vip")
+                .antMatchers("/message").hasRole("vip")
+                .antMatchers("/album").hasRole("vip");
         http.csrf().disable();
-        http.logout().logoutSuccessUrl("/");
-        http.rememberMe();
+        http.formLogin().loginPage("/toLogin")
+//                .loginProcessingUrl("/login")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .loginProcessingUrl("/login");
+        http.logout().logoutSuccessUrl("/toLogin");
+        http.rememberMe().rememberMeParameter("remember");
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .passwordEncoder(new BCryptPasswordEncoder())
-                .withUser("admin").password(new BCryptPasswordEncoder()
-                .encode("admin123")).roles("vip");
+                .withUser("yangjian").password(new BCryptPasswordEncoder()
+                .encode("yangjian"))
+                .roles("vip").and()
+                .withUser("yuanfeiyang")
+                .password(new BCryptPasswordEncoder()
+                        .encode("yuanfeiyang"))
+                .roles("vip").and()
+                .withUser("luyufang")
+                .password(new BCryptPasswordEncoder()
+                        .encode("luyufang")).roles("vip");
     }
 
 

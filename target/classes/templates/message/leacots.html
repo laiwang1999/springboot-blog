@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,9 +10,35 @@
     <link rel="stylesheet" type="text/css" th:href="@{/res/css/main.css}">
     <!--加载meta IE兼容文件-->
     <!--[if lt IE 9]>
+
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+<!--    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>-->
+<!--    <script>-->
+<!--        //测试ajax文件，无用-->
+<!--        $(document).ready(function () {-->
+<!--            let url = "http://localhost:8082";-->
+<!--            $.ajax({-->
+<!--                url: url + "/algorithm/list",-->
+<!--                type: "GET",-->
+<!--                success: function (response) {-->
+<!--                    console.log(response)-->
+<!--                    for(let i = 0;i<response.length;i++){-->
+<!--                        console.log(response[i].uuid);-->
+<!--                        console.log(response[i].title);-->
+<!--                        console.log(response[i].content);-->
+<!--                        console.log(response[i].createTime);-->
+<!--                    }-->
+<!--                },-->
+<!--                error: function (error) {-->
+<!--                    alert("出错了");-->
+<!--                }-->
+<!--            });-->
+
+<!--        });-->
+
+<!--    </script>-->
 </head>
 <body>
 <div th:replace="~{commons::header}"></div>
@@ -28,12 +55,15 @@
                             <form class="layui-form" th:action="@{/message/add}" method="post">
                                 <div class="layui-form-item layui-form-text">
                                     <div class="layui-input-block">
-                                        <textarea name="content" placeholder="既然来了，就说几句" class="layui-textarea"></textarea>
+                                        <textarea name="content" placeholder="既然来了，就说几句"
+                                                  class="layui-textarea"></textarea>
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
-                                        <input type="text" name="name" required  lay-verify="required" placeholder="说出你的名字" autocomplete="off" class="definite layui-input">
+                                        <input
+                                                type="text" name="name" required lay-verify="required"
+                                               placeholder="说出你的名字" autocomplete="off" class="definite layui-input">
                                     </div>
                                     <div class="layui-input-block" style="text-align: right;">
                                         <input class="layui-btn definite" type="submit" value="确认">
@@ -53,7 +83,8 @@
                             </div>
                             <div class="text">
                                 <p class="tit"><span class="name" th:text="${item.getName()}"></span>
-                                    <span class="data" th:text="${#dates.format(item.getDate(),'yyyy-MM-dd HH:mm')}"></span></p>
+                                    <span class="data"
+                                          th:text="${#dates.format(item.getDate(),'yyyy-MM-dd HH:mm')}"></span></p>
                                 <p class="ct" th:text="${item.getContent()}"></p>
                             </div>
                         </div>
@@ -65,5 +96,20 @@
     <div id="demo" style="text-align: center;"></div>
 </div>
 <div th:replace="~{commons::footer}"></div>
+<script type="text/javascript" th:src="@{/res/layui/layui.js}"></script>
+<script type="text/javascript" th:inline="javascript">
+    layui.config({
+        base: '../res/js/util/'
+    }).use(['element', 'laypage', 'jquery', 'menu'], function () {
+        element = layui.element, laypage = layui.laypage,
+            $ = layui.$, menu = layui.menu;
+        laypage.render({
+            elem: 'demo'
+            , count: 70 //数据总数，从服务端得到
+        });
+        menu.init();
+    })
+</script>
+
 </body>
 </html>
