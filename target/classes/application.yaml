@@ -17,6 +17,7 @@ spring:
 
   messages:
     basename: i18n.login
+    encoding: gbk
   type-aliases-package: com.yang.pojo
   mapper-locations: classpath:mapper/*.xml
 debug: true

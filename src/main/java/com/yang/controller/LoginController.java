@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
-    @GetMapping({"/toLogin"})
+    @GetMapping({"/toLogin","/index"})
     public String toLogin(){
         return "index";
     }

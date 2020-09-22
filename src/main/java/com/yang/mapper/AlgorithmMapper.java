@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface AlgorithmMapper {
     //查找所有文章
-    @Select("select * from algorithm_article order by uuid desc ;")
+    @Select("select * from algorithm_article order by createTime desc ;")
     List<Algorithm> selectAllAlgorithm();
 
     //根据名称查找算法文章
